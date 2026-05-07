@@ -101,7 +101,7 @@
     // Greater than (>) - Compares if the value of the left operand is greater than the value of the right operand and returns true if it is, otherwise returns false
 
     console.log(num10 > num11) // 10 > 10
-    
+
     // Less than (<) - Compares if the value of the left operand is less than the value of the right operand and returns true if it is, otherwise returns false
 
     console.log(num10 < num11) // 10 < 10
@@ -111,3 +111,54 @@
     // Less than or equal to (<=) - Compares if the value of the left operand is less than or equal to the value of the right operand and returns true if it is, otherwise returns false
     console.log(num10 <= num11) // 10 <= 10
 
+    console.log("****************************");
+    
+
+    //3. Logical Operators - Used to combine multiple conditions and return a boolean result
+
+    // 1. Logical AND (&&) - Returns true if both operands are true, otherwise returns false
+    // 2. Logical OR (||) - Returns true if at least one of the operands is true, otherwise returns false
+    // 3. Logical NOT (!) - Reverses the value from true to false or from false to true
+
+
+    // 1. Logical AND (&&) - (condition1 && condition2)
+
+    // true && true = true
+    // true && false = false
+    // false && true = false
+    // false && false = false
+    
+    console.log((10>5) && (12>6)) // true
+    console.log((10>5) && (12<6)) // false
+    console.log((10<5) && (12>6)) // false
+    console.log((10<5) && (12<6)) // false
+    
+
+
+    // 2. Logical OR (||) - (condition1 || condition2)
+
+    // true || true = true
+    // true || false = true
+    // false || true = true
+    // false || false = false
+
+
+    console.log((10>5) || (12>6)) // true
+    console.log((10>5) || (12<6)) // true
+    console.log((10<5) || (12>6)) // true
+    console.log((10<5) || (12<6)) // false
+
+    // Calendar - Month & Year
+
+    // 3. Logical NOT (!) - !(condition)
+
+    console.log(!(10>5)) // !true = false
+    console.log(!(10<5)) // !false = true
+
+
+    // 4. Assignment Operators (=) - Used to assign values to variables
+
+    let num12 = 10 // Assignment operator (=) - Assigns the value 10 to the variable num12
+
+
+    
