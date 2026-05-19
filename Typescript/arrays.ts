@@ -127,7 +127,45 @@ arr4.splice(2,3, "apple", "python", "TS", 100, 200)
 
 console.log(arr4)
 
-// slice(), ...
+// 7. slice(startIndex?, endIndex?) - Return the portion of an array from startIndex
+// to endIndex-1
+// startIndex - The position where you want to start the slice
+// endIndex(Exclusive) - The position where you want to end the slice
+
+let arr5 = [10,20,30,40,50,"JS","TS",60,30]
+
+console.log(arr5.slice(2,8)) // 2-7
+
+// 8. indexOf(element, startIndex?) - Return the index of the first occurances of an element
+// in an array, or -1 if not found
+
+console.log(arr5.indexOf(40,5))
+
+
+// Assignment - 
+// Find out all the occurances of 30 inside the array - arr5 - 2,8
+
+// 9. lastIndexOf(element, startIndex?) - Return the index of the last occurances of an element
+// in an array, or -1 if not found
+
+console.log(arr5.lastIndexOf(30))
+console.log(arr5.lastIndexOf(30, 6))
+
+// 10. includes(element, startIndex?) - Return true if the element is found in the array
+// otherwise false
+
+console.log(arr5.includes(20))
+
+// 11. join(separator?) - Join all the elements of an array and return as a string
+
+let arr6 = ["20","05",2026] // dd-mm-yyyy or dd/mm/yyyy
+
+console.log(arr6.join("-"))
+
+// 12. toString() - converts the array into string
+
+console.log(arr6.toString())
+
 
 
 
