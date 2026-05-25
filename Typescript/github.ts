@@ -54,3 +54,23 @@
 
 
 // #3 - #9
+
+
+
+
+/*
+
+Playwright - Typescript
+
+1. Node js
+2. VS code
+3. typescript - npm install typescript
+4. tsx - npm install tsx
+5. playwright - Tools & Framework - npm init playwright
+
+
+Jar - > packages -> Classes -> Properties & Methods
+
+
+
+*/
