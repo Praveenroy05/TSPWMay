@@ -1,18 +1,27 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+
+// Fixture - Is a special type of object which helps us in term of performing
+// setup and tear down process
+
+// page, browser, context and request
+
+test('get started link',   async function({ page }){
+
   await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
-
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+
 });
+
+// Promise - Pending, success, rejected
+
+// async- await  - goes together
+
+// await  is NOT to wait for an element on the webpage but to finish the step and
+// then only move to the next step for the execution
+// auto wait inside PW - It waits for element to be available on the webpage
+
+
+// How to write the test case in Playwright
+

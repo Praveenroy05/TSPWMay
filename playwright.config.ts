@@ -8,6 +8,24 @@ import { defineConfig, devices } from '@playwright/test';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+
+
+/*
+
+1. fullyParallel = true and workers = 1 - This will run in the sequential order
+2. fullyParallel = false and workers = 1 - This will run in the sequential order
+3. fullyParallel = false and workers > 1 - This will run the TEST FILES in a parallel
+mode but test cases inside the file will run in sequential order
+4. fullyParallel = true and workers > 1 - This will run the TEST CASES inside the files
+in a parallel mode but the test files will execute in sequential order.
+
+
+fileName.spec.ts OR
+fileName.test.ts
+
+
+*/
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -20,7 +38,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1, // 8
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
