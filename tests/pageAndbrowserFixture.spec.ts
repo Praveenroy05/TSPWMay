@@ -18,7 +18,6 @@ test.only("Title", async function ({browser}){
 
     const context = await browser.newContext() // creates an instance of a browser
     const page = await context.newPage()
-    
 })
 
 // 1. browser fixture will not automatically launch the browser
