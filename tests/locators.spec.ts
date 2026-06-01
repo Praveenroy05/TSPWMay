@@ -151,7 +151,7 @@ AXES - xpath
 
 
 // 6. //h2[text() = 'Test login']  -  //h5[text() = 'Student Registration Form']
-// 7. (//h2[contains(text(), 'Test')])[1]
+// 7. (//h2[contains(text(), 'login')])[1]
 
 //li[contains(text(),'negative')]
 
@@ -181,6 +181,8 @@ AXES - xpath
 
 // To write the locator using CSS or XPATH - page.locator("#idvalue")
 
+page.locator("//li[contains(text(), 'negative LogIn')]")
+
 
 
 */
@@ -207,7 +209,7 @@ page.getByTitle()
 // ads abcd hghjf
 
 page.getByText('ads', {exact:true})
-page.getByText('Practice Form', {exact:true})
+page.getByText('Test login', {exact:true})
 
 
 1. page.getByRole('radio', {name: 'Female'}) to locate by explicit and implicit accessibility attributes.
