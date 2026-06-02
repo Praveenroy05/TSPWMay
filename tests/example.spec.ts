@@ -12,6 +12,23 @@ test('get started link',   async function({ page }){
   await page.getByRole('link', { name: 'Get started' }).click();
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 
+
+
+  page.getByText("Test login", {exact:true}).first()
+  page.getByLabel("Tuesday", {exact:true})
+  page.getByPlaceholder("name@example.com", {exact:true})
+  page.getByAltText("logo image", {exact:true})
+  page.getByTitle("Tooltip text", {exact:true})
+  page.getByTestId("product-grid").last()
+
+  page.getByRole('heading', {name:'Student Registration Form'}).nth(1)
+  page.getByRole('button', {name:'Submit'})
+  page.getByRole('textbox', {name:'Username'})
+  page.getByRole('link', {name:'Home'})
+  page.getByRole('checkbox', {name: 'Tuesday'})
+  page.getByRole('radio', {name: 'Male'})
+
+
 });
 
 // Promise - Pending, success, rejected

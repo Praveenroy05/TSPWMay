@@ -196,7 +196,6 @@ page.locator("//li[contains(text(), 'negative LogIn')]")
 These are the recommended built-in locators.
 
 page.getByRole() - Works on the role of an element - button, textbox, checkbox, heading, link, radio, menuitem
-
 page.getByText() - Identify the element by using the text value (contains)
 page.getByLabel()
 page.getByAltText()
@@ -206,7 +205,7 @@ page.getByTitle()
 
 
 // ads 
-// ads abcd hghjf
+// adsabcdhghjf
 
 page.getByText('ads', {exact:true})
 page.getByText('Test login', {exact:true})
@@ -219,6 +218,7 @@ page.getByText('Test login', {exact:true})
 // textbox - <input>
 // radio
 // checkbox
+// link
 
 page.getByRole('button', {name: 'Submit'})
 
@@ -227,6 +227,8 @@ page.getByRole('button', {name: 'Submit'})
 
 2. page.getByText('Email', {exact: true}) to locate by text content.
 
+   page.getByText("Test login")
+
 3. page.getByLabel() to locate a form control by associated label's text.
 
     1. When you have "for" as an attribute for an element that have been developed using <label> - there we can directly use page.getByLable('label text')
@@ -234,18 +236,24 @@ page.getByRole('button', {name: 'Submit'})
     <label class="form-check-label" <input.....>Tuesday</label>
 
     page.getByLabel("Username")
+    page.getByLabel("Tuesday")
 
 4. page.getByPlaceholder('First Name')  - to locate an input by "placeholder" as an attribute.
 
-page.getByPlaceholder("name@example.com")
+    page.getByPlaceholder("name@example.com")
 
 
 5. page.getByAltText() to locate an element, usually image, by its text alternative.("alt" as an attribute)
 
+   page.getByAltText("logo image")
+
 6. page.getByTitle() to locate an element by its "title" attribute.
+
+    page.getByTitle("Tooltip text")
 
 7. page.getByTestId() to locate an element based on its "data-testid" attribute.
 
+  page.getByTestId("product-grid")
 
 */
 
