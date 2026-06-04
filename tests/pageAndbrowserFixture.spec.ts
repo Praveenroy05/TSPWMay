@@ -14,7 +14,7 @@ test("Title of the test case", async function({page}){
    
 })
 
-test.only("Title", async function ({browser}){
+test("Title", async function ({browser}){
 
     const context = await browser.newContext() // creates an instance of a browser
     const page = await context.newPage()
