@@ -46,7 +46,7 @@ test("Login into application using correct credentials", async function({page}){
 
 })
 
-test.only("Handling radio button and checkbox", async ({page})=>{
+test("Handling radio button and checkbox", async ({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/")
 
     // click() - Click on an element
@@ -67,4 +67,29 @@ test.only("Handling radio button and checkbox", async ({page})=>{
     await expect(page.getByLabel("Thursday")).not.toBeChecked()
 
 
+})
+
+// text value of an element
+
+test("Get the text value of an element", async ({page})=>{
+    await page.goto("https://testautomationpractice.blogspot.com/")
+
+    // textContext() - Will return the text value of an element even if it is hidden on the page
+    // innerText() - Will return the text valuue for visible element only.
+
+    const text = await page.locator("h1.title").innerText()
+    console.log(text)
+
+    // count() - Which will return the total number of matching element with the locator
+
+
+    // const count = await page.locator(".title").count()
+    // console.log(count)
+
+    // allTextContents()
+    // allInnerTexts()
+    
+    const alltexts = await page.locator(".title").allTextContents()
+    console.log(alltexts);
+    
 })
