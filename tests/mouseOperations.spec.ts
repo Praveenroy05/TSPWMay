@@ -51,7 +51,7 @@ test("Handling mouse hover for an element", async ({page})=>{
 })
 
 
-test.only("Handling drag and drop operations", async({page})=>{
+test("Handling drag and drop operations", async({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/")
 
     const sourceElement = page.locator("#draggable")
