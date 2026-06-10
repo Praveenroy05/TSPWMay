@@ -9,7 +9,7 @@
 
 import {test, expect} from '@playwright/test'
 
-test.only("Handling alerts", async ({page})=>{
+test("Handling alerts", async ({page})=>{
     await page.goto("https://demoqa.com/alerts")
 
     // Before you click on the element which is responsible for generation of an
