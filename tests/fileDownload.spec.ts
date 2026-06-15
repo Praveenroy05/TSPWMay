@@ -1,14 +1,14 @@
 import {test, expect} from '@playwright/test'
 import path from 'path'
 
-test.only("Handling file download", async ({page})=>{
+test("Handling file download", async ({page})=>{
     await page.goto("https://demoqa.com/upload-download")
 
     const downloadResult = page.waitForEvent("download")
     // console.log(downloadResult)
     
     await page.locator("#downloadButton").click()
-    
+
     const download = await downloadResult
     // console.log(download);
 
@@ -30,4 +30,5 @@ test.only("Handling file download", async ({page})=>{
 
     
 
+    // Handle calendar date
 })
