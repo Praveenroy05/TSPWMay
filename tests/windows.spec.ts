@@ -22,3 +22,6 @@ test("Handling windows", async ({page})=>{
 
 })
 
+// Class 
+// Objects
+
