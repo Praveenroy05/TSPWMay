@@ -30,7 +30,11 @@ ES 6 - ECMA SCRIPT 6 - 2015
     key:datatype
     key1:datatype ...
 
-    constructor
+    // constructor - Special function which help us in terms of initialising the value of the varaible of a class.
+    // It is automatically gets called when an object of a class is created. it can take
+    // parameters to initialize the properties of a class.
+
+    constructor()
  
  }
 
@@ -43,19 +47,91 @@ const obj = new ClassName()
 
 class Employee{
 
-    empId: number
+    empId: number 
     empName: string
     empAge : number
     private empSalary : number
     static companyName = "ABC"
 
 
-    employeeInfromation(){
-        console.log(this.empId);
+    // constructor - Special function which help us in terms of initialising the value of the varaible of a class.
+    // It is automatically gets called when an object of a class is created. it can take
+    // parameters to initialize the properties of a class.
+
+    // this - is a keyword which represents to the current class object
+
+    constructor(id:number, name:string, age:number, salary:number){
+        this.empId = id // emp.empId = 101 - emp1.empId =  102
+        this.empName = name
+        this.empAge = age
+        this.empSalary = salary
     }
+
+
+    employeeInformation(dept:string){
+        console.log("Employee Id : ", this.empId, "Emplyoee Name : ",this.empName, 
+            this.empAge, this.empSalary, dept);
+        
+    }
+
+    static displayCompany(){
+        console.log(Employee.companyName); 
+    }
+
+
 }
 
-const emp = new Employee()
+const emp = new Employee(101, "Rahul", 25, 100000)
+console.log(emp.empId);
+console.log(Employee.companyName)
+emp.employeeInformation("IT")
+Employee.displayCompany()
+
+const emp1 = new Employee(102, "John", 23, 70000)
+console.log(emp1.empId);
+emp1.employeeInformation("Finance")
+Employee.displayCompany()
+
+
+// let result = "";
+// for(let i=0; i<=5; i++){
+//     result = result + i + " "
+// }
+// console.log(result);
+
+
+// Inheritance - Acquiring the properties and methods from the parent class to the child class
+// extends - It helps us in performing the Inheritance concept
+
+class Manager extends Employee{
+
+    bonus: number
+    
+    constructor(id:number, name:string, age:number, salary:number, bonus:number){
+        super(id, name, age, salary) // it calls the parent class constructor to initialize
+        this.bonus = bonus
+    }
+
+    displayManagerInfo(){
+        this.employeeInformation("IT")
+        console.log(this.bonus) 
+    }
+
+}
+
+const mgr = new Manager(105, "Joe", 29, 100000, 5000)
+mgr.employeeInformation("IT")
+mgr.displayManagerInfo()
+Manager.displayCompany()
+
+
+const mgr1 = new Manager(106, "Raj", 27, 120000, 15000)
+mgr1.employeeInformation("IT")
+mgr1.displayManagerInfo()
+
+
+// Class - Object - Inheritance 
+
 
 
 
