@@ -7,17 +7,18 @@ let password= "Testing@1234"
 let incorrectPassword= "Test"
 
 
-
-test("Validate login with correct credentials", async ({page})=>{
-    const lp = new LoginPage(page)
+let lp :LoginPage
+test.beforeEach(async ({page})=>{
+    lp = new LoginPage(page)
     await lp.launchURL(url)
+})
+
+test("Login into application using correct credentials", async ()=>{
     await lp.loginIntoApplication(email, password)
     await expect(lp.homePageIdentifier).toBeVisible()
 })
 
-test("Validate login with incorrect credentials", async ({page})=>{
-    const lp = new LoginPage(page)
-    await lp.launchURL(url)
+test("Validate login with incorrect credentials", async ()=>{
     await lp.loginIntoApplication(email, incorrectPassword)
     await expect(lp.errorMessage).toHaveText("Incorrect email or password.")
 })
