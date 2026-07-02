@@ -7,7 +7,7 @@ export class DashboardPage{
     addToCartSuccMsg: Locator
     viewPageProductName: Locator
     viewPageProductPrice: Locator
-    homePageProductPrice : string
+    homePageProductPrice : string | null
 
     constructor(page:Page){
         this.page = page
@@ -18,10 +18,19 @@ export class DashboardPage{
         this.homePageProductPrice = ""
     }
 
-    async searchProduct(){
+    async searchProduct(productName:string, index:number){
+        await this.products.last().waitFor()
+        const countOfProduct = await this.products.count() // Returns the total number of matching elements
+        for(let i=0; i<countOfProduct; i++){
+            const productText= await this.products.nth(i).locator("b").textContent()
+            if(productText == productName){
+                this.homePageProductPrice = await this.products.nth(i).locator("div.text-muted").textContent()
+                await this.products.nth(i).locator("button").nth(index).click()
+                break
+            }
+        }
+
         
     }
-
-
 
 }
