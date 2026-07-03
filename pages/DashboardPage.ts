@@ -18,19 +18,26 @@ export class DashboardPage{
         this.homePageProductPrice = ""
     }
 
+    // async searchProduct(productName:string, index:number){
+    //     await this.products.last().waitFor()
+    //     const countOfProduct = await this.products.count() // Returns the total number of matching elements
+    //     for(let i=0; i<countOfProduct; i++){
+    //         const productText= await this.products.nth(i).locator("b").textContent()
+    //         if(productText == productName){
+    //             this.homePageProductPrice = await this.products.nth(i).locator("div.text-muted").textContent()
+    //             await this.products.nth(i).locator("button").nth(index).click()
+    //             break
+    //         }
+    //     }  
+    // }
+
+    // filter() - Filter out the value depending on the criteria
+    
+
     async searchProduct(productName:string, index:number){
         await this.products.last().waitFor()
-        const countOfProduct = await this.products.count() // Returns the total number of matching elements
-        for(let i=0; i<countOfProduct; i++){
-            const productText= await this.products.nth(i).locator("b").textContent()
-            if(productText == productName){
-                this.homePageProductPrice = await this.products.nth(i).locator("div.text-muted").textContent()
-                await this.products.nth(i).locator("button").nth(index).click()
-                break
-            }
-        }
-
-        
+        this.homePageProductPrice = await this.products.filter({hasText:`${productName}`}).locator("div.text-muted").textContent()
+        await this.products.filter({hasText:`${productName}`}).locator("button").nth(index).click()
     }
 
 }

@@ -18,12 +18,12 @@ test.beforeEach(async ({page})=>{
 })
 
 
-test("Search and add the product to the cart", async ({page})=>{
+test("Search and add the product to the cart", async ()=>{
     await dp.searchProduct(productName, 1)
     await expect(dp.addToCartSuccMsg).toHaveText("Product Added To Cart")
 })
 
-test("Search and view the product details", async ({page})=>{
+test("Search and view the product details", async ()=>{
     await dp.searchProduct(productName, 0)
     await expect(dp.viewPageProductName).toHaveText(productName)
     await expect(dp.viewPageProductPrice).toHaveText(dp.homePageProductPrice)
