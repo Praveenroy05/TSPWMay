@@ -13,16 +13,18 @@ test.beforeEach(async ({page})=>{
     await lp.launchURL(url)
 })
 
-test("Login into application using correct credentials", async ()=>{
+test("Login into application using correct credentials",{tag:'@smoke'}, async ()=>{
     await lp.loginIntoApplication(email, password)
     await expect(lp.homePageIdentifier).toBeVisible()
 })
 
-test("Validate login with incorrect credentials", async ()=>{
+test("Validate login with incorrect credentials", {tag: ['@smoke', '@regression']}, async ()=>{
     await lp.loginIntoApplication(email, incorrectPassword)
     await expect(lp.errorMessage).toHaveText("Incorrect email or password.")
 })
 
 // Hooks
+
+let i = [10,20]
 
 

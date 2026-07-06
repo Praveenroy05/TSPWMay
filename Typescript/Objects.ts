@@ -29,8 +29,7 @@ obj.fun()
 import data from '../testdata/product.json'
 
 for(let product of data){
-    console.log(product.productName);
-    
+    console.log(product.productName);  
 }
 
 

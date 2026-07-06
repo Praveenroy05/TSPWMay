@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "fullTest": "npx playwright test",
+    "ddExcel" : "npx playwright test tests/DPDDTestUsingExcel.spec.ts",
+    "smokeTest": "npx playwright test -g @smoke",
+    "regressionTest": "npx playwright test -g @regression"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Praveenroy05/TSPWMay.git"
@@ -18,6 +23,7 @@
   "homepage": "https://github.com/Praveenroy05/TSPWMay#readme",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "xlsx": "^0.18.5"
   }
 }
