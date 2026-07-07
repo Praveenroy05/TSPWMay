@@ -24,8 +24,23 @@ test.afterAll(async ()=>{
     console.log("After All");
 })
 
-test("Test1", async()=>{
-    console.log("Test1");
+test("Test1", async({page})=>{
+     await page.goto("https://practicetestautomation.com/practice-test-login/")
+    // Auto wait - Playwright by default waits for an element to be visible
+    // enable , interactable on the page
+
+    // fill("value") - It will enter the value inside the textbox.
+    const username = await page.getByRole("textbox", {name:'Username'})
+
+    await username.fill("student")
+    await page.pause()
+    // toHaveValue("value") - It check if the TEXTBOX/INPUT is having the value as
+    //  "value"
+    await expect(username).toHaveValue("student")
+    // pressSequentially("value") - It enter the value character by character in the textbox
+    await page.getByLabel("Password").pressSequentially("Password123")
+    // click() - Click on an element
+    await page.getByRole("button", {name:'Submit'}).click()
 })
 
 test("Test2", async()=>{

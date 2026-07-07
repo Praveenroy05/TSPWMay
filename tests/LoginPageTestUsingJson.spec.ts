@@ -21,3 +21,7 @@ test("@smoke @regression Validate login with incorrect credentials", async ()=>{
 // Hooks
 
 
+// Jenkins
+// MCP-AI Agent
+// API testing 
+// Visual Testing
