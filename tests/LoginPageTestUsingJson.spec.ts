@@ -18,10 +18,9 @@ test("@smoke @regression Validate login with incorrect credentials", async ()=>{
     await expect(lp.errorMessage).toHaveText("Incorrect email or password.")
 })
 
-// Hooks
 
 
-// Jenkins
+// Jenkins - server
 // MCP-AI Agent
 // API testing 
 // Visual Testing
