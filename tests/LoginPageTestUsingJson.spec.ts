@@ -24,3 +24,9 @@ test("@smoke @regression Validate login with incorrect credentials", async ()=>{
 // MCP-AI Agent
 // API testing 
 // Visual Testing
+
+// AI - chatgpt
+// LLM - Large Language Model
+
+// MCP - Model Context Protocol 
+// Agent - 
