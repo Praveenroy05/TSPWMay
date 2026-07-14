@@ -40,6 +40,7 @@ Body - Payoad - {
     "userPassword": "Testing@1234"
 }
 
+
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQ0Njc1NWFlMmFmZDRjMGI2Mjg2YmMiLCJ1c2VyRW1haWwiOiJ0ZXN0bkhOa0BnbWFpbC5jb20iLCJ1c2VyTW9iaWxlIjoxMjM0NTY3ODkwLCJ1c2VyUm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzgzOTA5NTIwLCJleHAiOjE4MTU0NjcxMjB9.PahKaXJ5uL1xH4IOkx1cGEWnSc9Q95q4rNMhHXZ5c_o",
     "userId": "66d46755ae2afd4c0b6286bc",
@@ -58,6 +59,8 @@ const loginPayload = {
     "userEmail": "testnHNk@gmail.com",
     "userPassword": "Testing@1234"
 }
+const orderURL = "https://rahulshettyacademy.com/api/ecom/order/create-order"
+const orderPayload = {orders: [{country: "Argentina", productOrderedId: "6960eac0c941646b7a8b3e68"}]}
 
 
 test("API automation validation", async ({request})=>{
@@ -68,8 +71,30 @@ test("API automation validation", async ({request})=>{
     })
        // headers: {}
 
-    console.log(await response.json());
+    const responseJson = await response.json()
+    console.log(responseJson)
+
+
+    expect(responseJson).toHaveProperty("token")
+    expect(typeof responseJson.token).toBe("string")
+
+    const token  = responseJson.token
+
+    const orderResponse = await request.post(orderURL, {
+        data: orderPayload,
+        headers:{
+            "authorization": token
+        }
+    })
+
+    const orderJsonResponse = await orderResponse.json()
+    console.log(orderJsonResponse);
+
+    const orderID = await orderJsonResponse.orders[0]
+    console.log(orderID);
     
+
+
 
 
 })
